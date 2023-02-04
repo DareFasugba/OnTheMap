@@ -20,6 +20,8 @@
 		9D21330929830C64006C4627 /* PostLocationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D21330829830C64006C4627 /* PostLocationResponse.swift */; };
 		9D21330B298452A6006C4627 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D21330A298452A6006C4627 /* LoginResponse.swift */; };
 		9D21330D298453AB006C4627 /* UpdateLocationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D21330C298453AB006C4627 /* UpdateLocationResponse.swift */; };
+		9D21330F298C577D006C4627 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D21330E298C577D006C4627 /* MapViewController.swift */; };
+		9D213311298C5A18006C4627 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D213310298C5A18006C4627 /* Student.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		9D21330829830C64006C4627 /* PostLocationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLocationResponse.swift; sourceTree = "<group>"; };
 		9D21330A298452A6006C4627 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		9D21330C298453AB006C4627 /* UpdateLocationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateLocationResponse.swift; sourceTree = "<group>"; };
+		9D21330E298C577D006C4627 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		9D213310298C5A18006C4627 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,8 @@
 				9D2132F9297DACF7006C4627 /* UdacityClient.swift */,
 				9D21330529830AC1006C4627 /* Responses */,
 				9D2132FF29806472006C4627 /* LoginViewController.swift */,
+				9D21330E298C577D006C4627 /* MapViewController.swift */,
+				9D213310298C5A18006C4627 /* Student.swift */,
 				9D2132E5297C60CE006C4627 /* AppDelegate.swift */,
 				9D2132E7297C60CE006C4627 /* SceneDelegate.swift */,
 				9D2132EB297C60CE006C4627 /* Main.storyboard */,
@@ -167,12 +173,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D21330F298C577D006C4627 /* MapViewController.swift in Sources */,
 				9D213304298308FC006C4627 /* StudentLocation.swift in Sources */,
 				9D21330729830B4F006C4627 /* StudentLocationResults.swift in Sources */,
 				9D21330D298453AB006C4627 /* UpdateLocationResponse.swift in Sources */,
 				9D21330B298452A6006C4627 /* LoginResponse.swift in Sources */,
 				9D21330029806472006C4627 /* LoginViewController.swift in Sources */,
 				9D2132FA297DACF7006C4627 /* UdacityClient.swift in Sources */,
+				9D213311298C5A18006C4627 /* Student.swift in Sources */,
 				9D2132E6297C60CE006C4627 /* AppDelegate.swift in Sources */,
 				9D21330929830C64006C4627 /* PostLocationResponse.swift in Sources */,
 				9D2132E8297C60CE006C4627 /* SceneDelegate.swift in Sources */,
