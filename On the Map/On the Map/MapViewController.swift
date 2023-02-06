@@ -29,13 +29,13 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     var annotations = [MKPointAnnotation]()
     for student in Student.locations {
                             
-    let lat = CLLocationDegrees(student.latitude)
-    let long = CLLocationDegrees(student.longitude)
+    let lat = CLLocationDegrees(student.latitude!)
+    let long = CLLocationDegrees(student.longitude!)
     let annotation = MKPointAnnotation()
-        annotation.coordinate = CLLocationCoordinate2D( latitude:lat, longitude: long);               annotation.title = "\(student.firstName)" + " " + "\(student.lastName)"
+        annotation.coordinate = CLLocationCoordinate2D( latitude:lat, longitude: long);               annotation.title = "\(String(describing: student.firstName))" + " " + "\(String(describing: student.lastName))"
     annotation.subtitle = student.mediaURL
     annotations.append(annotation)
-    self.mapView.addAnnotation(annotation)
+    self.mapView!.addAnnotation(annotation)
 }
                         
 } else {

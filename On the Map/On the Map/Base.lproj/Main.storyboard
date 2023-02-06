@@ -110,7 +110,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="Gw4-fQ-lXc">
             <objects>
-                <tabBarController id="WNU-CS-Hyr" sceneMemberID="viewController">
+                <tabBarController wantsFullScreenLayout="YES" modalPresentationStyle="fullScreen" id="WNU-CS-Hyr" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="MBn-UW-NMF"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yrC-pN-RLL">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
@@ -129,7 +129,7 @@
         <!--Root View Controller-->
         <scene sceneID="qKd-FN-NSi">
             <objects>
-                <tableViewController id="P6a-GY-SvD" sceneMemberID="viewController">
+                <tableViewController wantsFullScreenLayout="YES" modalPresentationStyle="fullScreen" id="P6a-GY-SvD" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="6AU-oI-et0">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -155,11 +155,11 @@
             </objects>
             <point key="canvasLocation" x="291" y="-384"/>
         </scene>
-        <!--Item-->
+        <!--List-->
         <scene sceneID="LTj-kX-9q9">
             <objects>
-                <navigationController id="YqR-kC-kKT" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="1BB-1x-4Fm"/>
+                <navigationController wantsFullScreenLayout="YES" modalPresentationStyle="fullScreen" id="YqR-kC-kKT" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="List" image="icon_listview-deselected" id="1BB-1x-4Fm"/>
                     <navigationItem key="navigationItem" id="sD0-7V-rjP"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="f4W-0X-x37">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
@@ -176,19 +176,24 @@
         <!--Map View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="On_the_Map" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController wantsFullScreenLayout="YES" modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="MapViewController" customModule="On_the_Map" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G0g-8S-8eX">
-                                <rect key="frame" x="0.0" y="59" width="393" height="718"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G0g-8S-8eX">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="G0g-8S-8eX" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="3OC-va-j99"/>
+                            <constraint firstAttribute="bottom" secondItem="G0g-8S-8eX" secondAttribute="bottom" id="XgT-MF-eDT"/>
+                            <constraint firstItem="G0g-8S-8eX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eOx-kf-xDm"/>
+                            <constraint firstItem="G0g-8S-8eX" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="frS-5s-A2S"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="pfV-UE-e6I"/>
                     <connections>
@@ -197,13 +202,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="291" y="377"/>
+            <point key="canvasLocation" x="290.83969465648852" y="376.76056338028172"/>
         </scene>
-        <!--Item-->
+        <!--Map-->
         <scene sceneID="jbK-wI-kPf">
             <objects>
-                <navigationController id="IVS-Ee-2eO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="xxL-0b-gkM"/>
+                <navigationController wantsFullScreenLayout="YES" modalPresentationStyle="fullScreen" id="IVS-Ee-2eO" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Map" image="icon_mapview-deselected" id="xxL-0b-gkM"/>
                     <navigationItem key="navigationItem" id="8hh-r1-XOg"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="JnC-UJ-eRn">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
@@ -219,6 +224,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icon_listview-deselected" width="75" height="50"/>
+        <image name="icon_mapview-deselected" width="75" height="50"/>
         <image name="logo-u" width="62" height="62"/>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
