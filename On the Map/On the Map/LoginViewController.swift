@@ -20,7 +20,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         passwordTextField.text = ""
         passwordTextField.textColor = .black
         passwordTextField.delegate = self
-        activityIndicator.isHidden = true
         
         //set placeholder text for textfields
         emailTextField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray])

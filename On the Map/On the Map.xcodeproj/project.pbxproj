@@ -22,6 +22,9 @@
 		9D21330D298453AB006C4627 /* UpdateLocationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D21330C298453AB006C4627 /* UpdateLocationResponse.swift */; };
 		9D21330F298C577D006C4627 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D21330E298C577D006C4627 /* MapViewController.swift */; };
 		9D213311298C5A18006C4627 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D213310298C5A18006C4627 /* Student.swift */; };
+		9D64370529919CB500530E64 /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D64370429919CB500530E64 /* ListTableViewController.swift */; };
+		9D64370729936CA300530E64 /* LocationListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D64370629936CA300530E64 /* LocationListTableViewCell.swift */; };
+		9D64370929936D1600530E64 /* AddLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D64370829936D1600530E64 /* AddLocationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,9 @@
 		9D21330C298453AB006C4627 /* UpdateLocationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateLocationResponse.swift; sourceTree = "<group>"; };
 		9D21330E298C577D006C4627 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		9D213310298C5A18006C4627 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		9D64370429919CB500530E64 /* ListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
+		9D64370629936CA300530E64 /* LocationListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationListTableViewCell.swift; sourceTree = "<group>"; };
+		9D64370829936D1600530E64 /* AddLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,10 +87,13 @@
 				9D213310298C5A18006C4627 /* Student.swift */,
 				9D2132E5297C60CE006C4627 /* AppDelegate.swift */,
 				9D2132E7297C60CE006C4627 /* SceneDelegate.swift */,
+				9D64370829936D1600530E64 /* AddLocationViewController.swift */,
+				9D64370629936CA300530E64 /* LocationListTableViewCell.swift */,
 				9D2132EB297C60CE006C4627 /* Main.storyboard */,
 				9D2132EE297C60D0006C4627 /* Assets.xcassets */,
 				9D2132F0297C60D0006C4627 /* LaunchScreen.storyboard */,
 				9D2132F3297C60D0006C4627 /* Info.plist */,
+				9D64370429919CB500530E64 /* ListTableViewController.swift */,
 			);
 			path = "On the Map";
 			sourceTree = "<group>";
@@ -173,17 +182,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D64370729936CA300530E64 /* LocationListTableViewCell.swift in Sources */,
 				9D21330F298C577D006C4627 /* MapViewController.swift in Sources */,
 				9D213304298308FC006C4627 /* StudentLocation.swift in Sources */,
 				9D21330729830B4F006C4627 /* StudentLocationResults.swift in Sources */,
 				9D21330D298453AB006C4627 /* UpdateLocationResponse.swift in Sources */,
 				9D21330B298452A6006C4627 /* LoginResponse.swift in Sources */,
 				9D21330029806472006C4627 /* LoginViewController.swift in Sources */,
+				9D64370929936D1600530E64 /* AddLocationViewController.swift in Sources */,
 				9D2132FA297DACF7006C4627 /* UdacityClient.swift in Sources */,
 				9D213311298C5A18006C4627 /* Student.swift in Sources */,
 				9D2132E6297C60CE006C4627 /* AppDelegate.swift in Sources */,
 				9D21330929830C64006C4627 /* PostLocationResponse.swift in Sources */,
 				9D2132E8297C60CE006C4627 /* SceneDelegate.swift in Sources */,
+				9D64370529919CB500530E64 /* ListTableViewController.swift in Sources */,
 				9D2133022981BD84006C4627 /* GetUserDataResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
