@@ -7,10 +7,9 @@
 
 import UIKit
 
-class ListTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ListTableViewController: UITableViewController{
 
     @IBOutlet weak var refreshButton: UIBarButtonItem!
-    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,11 +69,11 @@ class ListTableViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         Student.locations.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "LocationCell", for: indexPath) as? LocationListTableViewCell else {
@@ -89,7 +88,7 @@ class ListTableViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let student = Student.locations[indexPath.row]
         guard let url = URL(string: student.mediaURL!) else {return}
