@@ -52,23 +52,6 @@ class ListTableViewController: UITableViewController{
     }
     
     
-    @IBAction func logOut(_ sender: Any) {
-        UdacityClient.logout { success, error in
-            if success{
-                self.dismiss(animated: true, completion: nil)
-                print("logged out")
-            }else {
-                DispatchQueue.main.async {
-                    let alert = UIAlertController(title: "Failed", message: "Could not log out. Try again", preferredStyle: .alert)
-                    let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                    alert.addAction(action)
-                    self.present(alert, animated: true, completion: nil)
-                }
-            }
-        }
-    }
-    
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         Student.locations.count
     }
@@ -76,12 +59,12 @@ class ListTableViewController: UITableViewController{
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "LocationCell", for: indexPath) as? LocationListTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "LocationTableCell", for: indexPath) as? LocationListTableViewCell else {
             fatalError("error")
             
         }
         let student = Student.locations[indexPath.row]
-        cell.textLabel?.text = "\(String(describing: student.firstName))" + " " + "\(String(describing: student.lastName))"
+        cell.textLabel?.text = "\(String(describing: student.firstName!))" + " " + "\(String(describing: student.lastName!))"
         cell.detailTextLabel?.text = "\(String(describing: student.mediaURL))"
         
        return cell

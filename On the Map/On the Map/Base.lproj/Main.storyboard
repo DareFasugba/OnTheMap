@@ -139,7 +139,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="y1p-PJ-eyf" customClass="LocationListTableViewCell" customModule="On_the_Map" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LocationTableCell" id="y1p-PJ-eyf" customClass="LocationListTableViewCell" customModule="On_the_Map" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="y1p-PJ-eyf" id="l09-HS-l2k">
@@ -166,7 +166,7 @@
                                 </connections>
                             </button>
                             <connections>
-                                <segue destination="0XZ-Y8-5Z5" kind="show" id="CU5-xn-ZGl"/>
+                                <segue destination="0XZ-Y8-5Z5" kind="show" identifier="AddStudentFromList" id="AvE-Qr-I4e"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" id="AS7-qY-fbZ">
@@ -202,7 +202,8 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Find Location"/>
                                 <connections>
-                                    <segue destination="UiS-4Z-Bp5" kind="show" id="fvp-Sn-lAI"/>
+                                    <action selector="findLocationTapped:" destination="0XZ-Y8-5Z5" eventType="primaryActionTriggered" id="Nfa-tC-xVC"/>
+                                    <segue destination="UiS-4Z-Bp5" kind="show" identifier="SearchLocationSegue" id="fvp-Sn-lAI"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Media URL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eeO-zb-oh7">
@@ -256,10 +257,10 @@
             </objects>
             <point key="canvasLocation" x="1243.5114503816794" y="-385.21126760563385"/>
         </scene>
-        <!--View Controller-->
+        <!--Search Location View Controller-->
         <scene sceneID="sCC-c3-SUc">
             <objects>
-                <viewController id="UiS-4Z-Bp5" sceneMemberID="viewController">
+                <viewController id="UiS-4Z-Bp5" customClass="SearchLocationViewController" customModule="On_the_Map" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hyX-dH-bTZ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -273,6 +274,10 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Finish"/>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="xsL-rw-2bd">
+                                <rect key="frame" x="186" y="398" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="c3M-L7-YTg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -287,6 +292,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Lhj-52-J7z"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="xsL-rw-2bd" id="SYI-4o-9aO"/>
+                        <outlet property="finishButton" destination="sgt-lZ-Vox" id="VOm-5Q-YeW"/>
+                        <outlet property="mapView" destination="LLD-D1-N0V" id="B0g-Pr-gfh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iEn-lO-Yt4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
