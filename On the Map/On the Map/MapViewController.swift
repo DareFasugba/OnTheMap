@@ -20,6 +20,23 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         tabBarController?.tabBar.isHidden = false
         displayPins()
     }
+    @IBAction func logOut(_ sender: Any) {
+          UdacityClient.logout { success, error in
+              if success{
+                  self.dismiss(animated: true, completion: nil)
+                  print("You have successfully been logged out")
+              }else {
+                  DispatchQueue.main.async {
+                      let alert = UIAlertController(title: "Failed to Log Out", message: "Could not log out, please try again", preferredStyle: .alert)
+                      let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                      alert.addAction(action)
+                      self.present(alert, animated: true, completion: nil)
+                  }
+              }
+          }
+      }
+
+  
     
     func displayPins() {
         UdacityClient.getStudentLocations { studentlocationresults, error in

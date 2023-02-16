@@ -33,13 +33,13 @@ class SearchLocationViewController: UIViewController, MKMapViewDelegate {
             if UdacityClient.User.createdAt == "" {
                 UdacityClient.getUserData(completion: handleGetUserData(firstName:lastName:error:))
             }else {
-                UdacityClient.updateLocation(firstName: UdacityClient.User.firstName, lastName: UdacityClient.User.lastName, mapString: location, mediaURL: link, latitude: latitude, longitude: longitude, completion: handleUpdateLocation(success:error:))
+                UdacityClient.updateLocation(firstName: UdacityClient.User.firstName, lastName: UdacityClient.User.lastName, mapString: location, mediaURL: url, latitude: latitude, longitude: longitude, completion: handleUpdateLocation(success:error:))
             }
         }
         
         func handleGetUserData(firstName: String?, lastName: String?, error: Error?){
             if error == nil{
-                UdacityClient.postLocation(firstName: firstName ?? "", lastName: lastName ?? "", mapString: location, mediaURL: link, latitude: latitude, longitude: longitude, completion: handlePostLocation(success:error:))
+                UdacityClient.postLocation(firstName: firstName ?? "", lastName: lastName ?? "", mapString: location, mediaURL: url, latitude: latitude, longitude: longitude, completion: handlePostLocation(success:error:))
             }else{
                 print("User Data Cannot Be Handled")
             }
@@ -51,7 +51,7 @@ class SearchLocationViewController: UIViewController, MKMapViewDelegate {
             if success {
                 UdacityClient.User.location = location
                 print(UdacityClient.User.location)
-                UdacityClient.User.link = link
+                UdacityClient.User.url = url
                 print("Student Location Added")
                 navigationController?.popToRootViewController(animated: true)
             }else{
@@ -66,7 +66,7 @@ class SearchLocationViewController: UIViewController, MKMapViewDelegate {
         func handleUpdateLocation(success: Bool, error: Error?){
             if success{
                 UdacityClient.User.location = location
-                UdacityClient.User.link = link
+                UdacityClient.User.url = url
                 print("Student Location Updated")
                 navigationController?.popToRootViewController(animated: true)
             }else{

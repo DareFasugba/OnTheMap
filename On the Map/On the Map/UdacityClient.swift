@@ -11,7 +11,7 @@ class UdacityClient {
     
     struct User {
             static var location = ""
-            static var link = ""
+            static var url = ""
             static var createdAt = ""
             static var updatedAt = ""
             static var firstName = ""

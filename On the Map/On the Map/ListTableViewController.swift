@@ -82,12 +82,12 @@ class ListTableViewController: UITableViewController{
     
     
     func showAlert(){
-        let alert = UIAlertController(title: "Warning", message: "You have already posted a student location.Would you like to overwrite your current location?", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Warning", message: "You have already posted a student location. Would you like to overwrite your current location?", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Overwrite", style: .default) { action in
             if let vc = self.storyboard?.instantiateViewController(identifier: "AddLocationViewController") as? AddLocationViewController {
                 vc.loadView()
                 self.tabBarController?.tabBar.isHidden = true
-                vc.urlTextField.text = UdacityClient.User.link
+                vc.urlTextField.text = UdacityClient.User.url
                 vc.locationTextField.text = UdacityClient.User.location
                 self.navigationController?.pushViewController(vc, animated: true)
                 
