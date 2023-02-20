@@ -155,7 +155,17 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="On The Map" id="5KO-BE-keq">
                         <barButtonItem key="backBarButtonItem" title="Back" id="fwu-ki-XFf"/>
-                        <barButtonItem key="leftBarButtonItem" id="t9N-g7-Nf8">
+                        <barButtonItem key="leftBarButtonItem" id="AS7-qY-fbZ">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="azh-en-69J">
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="icon_refresh"/>
+                                <connections>
+                                    <action selector="refresh:" destination="P6a-GY-SvD" eventType="primaryActionTriggered" id="Ujz-Ia-jX7"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" id="t9N-g7-Nf8">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="mB3-PA-iZ9">
                                 <rect key="frame" x="16" y="9" width="87" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -166,19 +176,8 @@
                                 </connections>
                             </button>
                             <connections>
-                                <segue destination="0XZ-Y8-5Z5" kind="show" identifier="AddStudentFromList" id="AvE-Qr-I4e"/>
+                                <segue destination="0XZ-Y8-5Z5" kind="presentation" identifier="AddStudentFromList" id="AvE-Qr-I4e"/>
                             </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" id="AS7-qY-fbZ">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="azh-en-69J">
-                                <rect key="frame" x="290" y="9" width="87" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="icon_refresh"/>
-                                <connections>
-                                    <action selector="refresh:" destination="P6a-GY-SvD" eventType="primaryActionTriggered" id="Ujz-Ia-jX7"/>
-                                </connections>
-                            </button>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -198,7 +197,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n8D-XB-nZ6">
-                                <rect key="frame" x="94" y="380" width="205" height="34.333333333333314"/>
+                                <rect key="frame" x="94" y="383" width="205" height="34.333333333333314"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Find Location"/>
                                 <connections>
@@ -207,17 +206,17 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Media URL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eeO-zb-oh7">
-                                <rect key="frame" x="94" y="317" width="205" height="34"/>
+                                <rect key="frame" x="94" y="320" width="205" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7fm-oa-H3i">
-                                <rect key="frame" x="94" y="262" width="205" height="34"/>
+                                <rect key="frame" x="94" y="265" width="205" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_world" translatesAutoresizingMaskIntoConstraints="NO" id="FqH-mi-DbT">
-                                <rect key="frame" x="120" y="88" width="144" height="139"/>
+                                <rect key="frame" x="120" y="91" width="144" height="139"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="144" id="Djf-u1-2pk"/>
                                     <constraint firstAttribute="height" constant="139" id="vKl-Uo-aXM"/>
@@ -267,11 +266,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LLD-D1-N0V">
-                                <rect key="frame" x="0.0" y="56" width="393" height="704"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="715"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sgt-lZ-Vox">
-                                <rect key="frame" x="108" y="716.66666666666663" width="176" height="34.333333333333371"/>
+                                <rect key="frame" x="108" y="730.66666666666663" width="176" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Finish"/>
                                 <connections>
@@ -347,18 +346,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="On The Map" id="pfV-UE-e6I">
-                        <barButtonItem key="leftBarButtonItem" title="Item" style="plain" id="Tew-ED-g4x">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="Tew-ED-g4x">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="KqD-y8-1Ie">
                                 <rect key="frame" x="16" y="9" width="87" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="icon_addpin"/>
                                 <connections>
-                                    <segue destination="0XZ-Y8-5Z5" kind="show" id="hZ1-YE-Afa"/>
+                                    <segue destination="0XZ-Y8-5Z5" kind="presentation" id="hZ1-YE-Afa"/>
                                 </connections>
                             </button>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="4vR-L7-izh">
+                        <barButtonItem key="rightBarButtonItem" id="4vR-L7-izh">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="P8W-zp-77i">
                                 <rect key="frame" x="290" y="10.666666666666664" width="87" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -398,7 +397,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="hZ1-YE-Afa"/>
+        <segue reference="AvE-Qr-I4e"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="icon_addpin" width="24" height="24"/>

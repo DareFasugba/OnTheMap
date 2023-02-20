@@ -72,13 +72,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBAction func login(_ sender: Any) {
         //code to login and if incorrect popup notifications to say wrong
         fieldsChecker()
-        UdacityClient.login(username: emailTextField.text!, password: passwordTextField.text!, completion: handleLoginResponse(success:error:))
         if (emailTextField.text?.isEmpty)! || (passwordTextField.text?.isEmpty)! {
             DispatchQueue.main.async {
-                let alert = UIAlertController(title: "Required fields", message: "The credentials were incorrect, please check your email or password", preferredStyle: .alert)
-                let action = UIAlertAction(title: "OK", style: .default, handler: nil)
-                alert.addAction(action)
+                let alert = UIAlertController(title: "Required Fields", message: "The credentials were incorrect, please check your email or password", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
+
             }
         }else {
             setLoggingIn(true)
@@ -95,6 +94,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     func showLoginFailure(message: String) {
         let alertVC = UIAlertController(title: "Login Failed", message: message, preferredStyle: .alert)
         alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alertVC, animated: true)
     }
     @IBAction func signUp(_ sender: Any) {
         //signup button to send safari to create a signup
