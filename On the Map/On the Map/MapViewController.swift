@@ -35,18 +35,25 @@ class MapViewController: UIViewController, MKMapViewDelegate {
               }
           }
       }
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation, calloutAccessoryControlTapped control: UIControl) -> MKAnnotationView? {
-            guard annotation is MKPointAnnotation else { return nil }
-            let identifier = "Annotation"
-            var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+            let reuseId = "Annotation"
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKMarkerAnnotationView
             if annotationView == nil {
-                annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+                annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
                 annotationView?.canShowCallout = true
-                annotationView?.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
-            } else {
+         annotationView?.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+            }
+            else {
                 annotationView?.annotation = annotation
             }
             return annotationView
+        }
+
+        func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+            if control == view.rightCalloutAccessoryView {
+      if let toOpen = view.annotation?.subtitle {
+                }
+            }
         }
     
   

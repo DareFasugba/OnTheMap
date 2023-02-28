@@ -181,7 +181,7 @@ class UdacityClient {
             body.mediaURL = mediaURL
             body.latitude = latitude
             body.longitude = longitude
-            
+            body.uniqueKey = Auth.accountKey
             
             
         taskForPOSTRequest(url: Endpoints.postLocation.url, responseType: PostLocationResponse.self, body: body) { response, error in

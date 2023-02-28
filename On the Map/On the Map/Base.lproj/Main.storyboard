@@ -157,6 +157,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="fwu-ki-XFf"/>
                         <barButtonItem key="leftBarButtonItem" id="AS7-qY-fbZ">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="azh-en-69J">
+                                <rect key="frame" x="16" y="9" width="48" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="icon_refresh"/>
@@ -167,7 +168,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" id="t9N-g7-Nf8">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="mB3-PA-iZ9">
-                                <rect key="frame" x="16" y="9" width="87" height="38"/>
+                                <rect key="frame" x="290" y="9" width="87" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="icon_addpin"/>
