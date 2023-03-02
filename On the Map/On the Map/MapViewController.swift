@@ -48,15 +48,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             }
             return annotationView
         }
-
-        func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-            if control == view.rightCalloutAccessoryView {
-      if let toOpen = view.annotation?.subtitle {
-                }
-            }
-        }
-    
-  
     
     func displayPins() {
         UdacityClient.getStudentLocations { studentlocationresults, error in

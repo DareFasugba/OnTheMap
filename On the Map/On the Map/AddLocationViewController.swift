@@ -29,6 +29,9 @@ class AddLocationViewController: UIViewController, UITextFieldDelegate {
            urlTextField.attributedPlaceholder = NSAttributedString(string: "URL", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray])
 
        }
+    @IBAction func cancelAction(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
        override func viewWillAppear(_ animated: Bool) {
            subscribeToKeyboardNotifications()
            

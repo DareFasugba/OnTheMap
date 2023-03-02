@@ -53,7 +53,8 @@ class SearchLocationViewController: UIViewController, MKMapViewDelegate {
                 print(UdacityClient.User.location)
                 UdacityClient.User.url = url
                 print("Student Location Added")
-                navigationController?.popToRootViewController(animated: true)
+                dismiss(animated: true, completion: nil)
+//                navigationController?.popToRootViewController(animated: true)
             }else{
                 let alert = UIAlertController(title: "Error", message: "Student could not added. Try again", preferredStyle: .alert)
                 let action = UIAlertAction(title: "OK", style: .default, handler: nil)
@@ -68,7 +69,8 @@ class SearchLocationViewController: UIViewController, MKMapViewDelegate {
                 UdacityClient.User.location = location
                 UdacityClient.User.url = url
                 print("Student Location Updated")
-                navigationController?.popToRootViewController(animated: true)
+                dismiss(animated: true, completion: nil)
+//                navigationController?.popToRootViewController(animated: true)
             }else{
                 print("Student Location cannot be updated")
             }
