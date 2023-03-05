@@ -82,21 +82,23 @@ class AddLocationViewController: UIViewController, UITextFieldDelegate {
                    }
                    
                }else {
-                   let alert = UIAlertController(title: "Error", message: "Geocode could not be found. Try again please", preferredStyle: .alert)
-                   let action = UIAlertAction(title: "OK", style: .default, handler: nil)
-                   alert.addAction(action)
-                   self.present(alert, animated: true, completion: nil)
-                   print("geocode error")
+                   DispatchQueue.main.async {
+                       let alert = UIAlertController(title: "Geocode is not findable", message: "Geocode cannot be found", preferredStyle: .alert)
+                       alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                       self.present(alert, animated: true, completion: nil)
+                       print("geocode error")
+                   }
                }
                self.setActivityIndicator(false)
            }
        }
        
        func showAlert(){
-           let alert = UIAlertController(title: "Required Fields!", message: "You must provide a location and an url.", preferredStyle: .alert)
-           let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-           alert.addAction(okAction)
-           present(alert, animated: true, completion: nil)
+           DispatchQueue.main.async {
+               let alert = UIAlertController(title: "Credentials not provided", message: "Please fill both location and url", preferredStyle: .alert)
+               alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+               self.present(alert, animated: true, completion: nil)
+           }
        }
        
        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

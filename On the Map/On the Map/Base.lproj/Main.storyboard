@@ -155,17 +155,30 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="On The Map" id="5KO-BE-keq">
                         <barButtonItem key="backBarButtonItem" title="Back" id="fwu-ki-XFf"/>
-                        <barButtonItem key="leftBarButtonItem" id="AS7-qY-fbZ">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="azh-en-69J">
-                                <rect key="frame" x="16" y="9" width="48" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="icon_refresh"/>
-                                <connections>
-                                    <action selector="refresh:" destination="P6a-GY-SvD" eventType="primaryActionTriggered" id="Ujz-Ia-jX7"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
+                        <leftBarButtonItems>
+                            <barButtonItem id="scg-VM-msl">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="dpg-hH-taw">
+                                    <rect key="frame" x="16" y="10.666666666666664" width="87" height="35"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="Log Out"/>
+                                    <connections>
+                                        <action selector="logOut:" destination="P6a-GY-SvD" eventType="primaryActionTriggered" id="qFT-2H-UzO"/>
+                                    </connections>
+                                </button>
+                            </barButtonItem>
+                            <barButtonItem id="AS7-qY-fbZ">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="azh-en-69J">
+                                    <rect key="frame" x="111" y="9" width="48" height="38"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" image="icon_refresh"/>
+                                    <connections>
+                                        <action selector="refresh:" destination="P6a-GY-SvD" eventType="primaryActionTriggered" id="Ujz-Ia-jX7"/>
+                                    </connections>
+                                </button>
+                            </barButtonItem>
+                        </leftBarButtonItems>
                         <barButtonItem key="rightBarButtonItem" id="t9N-g7-Nf8">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="mB3-PA-iZ9">
                                 <rect key="frame" x="290" y="9" width="87" height="38"/>
@@ -203,7 +216,6 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Find Location"/>
                                 <connections>
                                     <action selector="findLocationTapped:" destination="0XZ-Y8-5Z5" eventType="primaryActionTriggered" id="Nfa-tC-xVC"/>
-                                    <segue destination="UiS-4Z-Bp5" kind="show" identifier="SearchLocationSegue" id="fvp-Sn-lAI"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Media URL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eeO-zb-oh7">
@@ -261,6 +273,7 @@
                         <outlet property="findLocation" destination="n8D-XB-nZ6" id="jnn-32-Ic5"/>
                         <outlet property="locationTextField" destination="7fm-oa-H3i" id="RdQ-nb-u2y"/>
                         <outlet property="urlTextField" destination="eeO-zb-oh7" id="iJ3-f3-vWW"/>
+                        <segue destination="UiS-4Z-Bp5" kind="show" identifier="SearchLocationSegue" id="FdE-mb-K3W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JMQ-u3-Y90" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -359,25 +372,25 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="On The Map" id="pfV-UE-e6I">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="icon_addpin" id="Tew-ED-g4x">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="KqD-y8-1Ie">
-                                <rect key="frame" x="16" y="9" width="87" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="icon_addpin"/>
-                                <connections>
-                                    <segue destination="0XZ-Y8-5Z5" kind="presentation" id="hZ1-YE-Afa"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" id="4vR-L7-izh">
+                        <barButtonItem key="leftBarButtonItem" id="4vR-L7-izh">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="P8W-zp-77i">
-                                <rect key="frame" x="290" y="10.666666666666664" width="87" height="35"/>
+                                <rect key="frame" x="16" y="10.666666666666664" width="87" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Log Out"/>
                                 <connections>
                                     <action selector="logOut:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="o68-mw-Qg5"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="icon_addpin" id="Tew-ED-g4x">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="KqD-y8-1Ie">
+                                <rect key="frame" x="329" y="9" width="48" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="icon_addpin"/>
+                                <connections>
+                                    <segue destination="0XZ-Y8-5Z5" kind="presentation" id="hZ1-YE-Afa"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -410,7 +423,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="AvE-Qr-I4e"/>
+        <segue reference="hZ1-YE-Afa"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="icon_addpin" width="24" height="24"/>

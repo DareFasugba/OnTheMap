@@ -56,11 +56,12 @@ class SearchLocationViewController: UIViewController, MKMapViewDelegate {
                 dismiss(animated: true, completion: nil)
 //                navigationController?.popToRootViewController(animated: true)
             }else{
-                let alert = UIAlertController(title: "Error", message: "Student could not added. Try again", preferredStyle: .alert)
-                let action = UIAlertAction(title: "OK", style: .default, handler: nil)
-                alert.addAction(action)
-                present(alert, animated: true, completion: nil)
-                print("Student Could Not Be Added")
+                DispatchQueue.main.async {
+                    let alert = UIAlertController(title: "Error", message: "Student could not be added try again", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                    print("Student Could Not Be Added")
+                }
             }
         }
         
