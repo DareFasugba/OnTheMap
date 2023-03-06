@@ -42,7 +42,7 @@ class UdacityClient {
             var stringValue: String {
                 switch self {
                 case .createSessionId: return "https://onthemap-api.udacity.com/v1/session"
-                case .getLocations: return "https://onthemap-api.udacity.com/v1/StudentLocation?order=-updatedAt"
+                case .getLocations: return "https://onthemap-api.udacity.com/v1/StudentLocation?order=-updatedAt&limit=100"
                 case .postLocation: return "https://onthemap-api.udacity.com/v1/StudentLocation"
                 case .getUserData: return "https://onthemap-api.udacity.com/v1/users/\(Auth.accountKey)"
                 case .updateLocation: return "https://onthemap-api.udacity.com/v1/StudentLocation/\(PreviousPostLocationObject.objectId)"

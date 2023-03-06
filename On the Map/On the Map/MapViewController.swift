@@ -21,34 +21,47 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         displayPins()
     }
     @IBAction func logOut(_ sender: Any) {
-          UdacityClient.logout { success, error in
-              if success{
-                  self.dismiss(animated: true, completion: nil)
-                  print("You have successfully been logged out")
-              }else {
-                  DispatchQueue.main.async {
-                      let alert = UIAlertController(title: "Failed to Log Out", message: "Could not log out, please try again", preferredStyle: .alert)
-                      let action = UIAlertAction(title: "OK", style: .default, handler: nil)
-                      alert.addAction(action)
-                      self.present(alert, animated: true, completion: nil)
-                  }
-              }
-          }
-      }
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-            let reuseId = "Annotation"
-        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKMarkerAnnotationView
-            if annotationView == nil {
-                annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
-                annotationView?.canShowCallout = true
-         annotationView?.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+        UdacityClient.logout { success, error in
+            if success{
+                self.dismiss(animated: true, completion: nil)
+                print("You have successfully been logged out")
+            }else {
+                DispatchQueue.main.async {
+                    let alert = UIAlertController(title: "Failed to Log Out", message: "Could not log out, please try again", preferredStyle: .alert)
+                    let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                    alert.addAction(action)
+                    self.present(alert, animated: true, completion: nil)
+                }
             }
-            else {
-                annotationView?.annotation = annotation
-            }
-            return annotationView
         }
-    
+    }
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let reuseId = "Annotation"
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKMarkerAnnotationView
+        if annotationView == nil {
+            annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+            annotationView?.canShowCallout = true
+            annotationView?.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+        }
+        else {
+            annotationView?.annotation = annotation
+        }
+        return annotationView
+    }
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        if control == view.rightCalloutAccessoryView {
+            let app = UIApplication.shared
+            // method to open the link
+            let url = URL(string: Student.location)!
+            if UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                //If you want handle the completion block than
+                UIApplication.shared.open(url, options: [:], completionHandler: { (success) in
+                     print("Open url : \(success)")
+                })
+        }
+    }
+}
     func displayPins() {
         UdacityClient.getStudentLocations { studentlocationresults, error in
                     
